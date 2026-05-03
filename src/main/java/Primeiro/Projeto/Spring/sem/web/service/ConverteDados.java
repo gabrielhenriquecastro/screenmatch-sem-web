@@ -1,0 +1,14 @@
+package Primeiro.Projeto.Spring.sem.web.service;
+
+import Primeiro.Projeto.Spring.sem.web.model.DadosSerie;
+import tools.jackson.databind.ObjectMapper;
+
+public class ConverteDados implements IConverteDados {
+    private ObjectMapper mapper = new ObjectMapper();
+
+
+    @Override
+    public <T> T obterDados(String json, Class<T> classe) {
+        return mapper.readValue(json, classe);
+    }
+}
